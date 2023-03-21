@@ -8,7 +8,7 @@ package edu.uqu.cs;
 * Make sure to complete and submit your lab
 */
 
-
+import java.util.Scanner;
 public class App{
 
 /**  
@@ -23,6 +23,27 @@ public class App{
 *        1 Tweetle 3 TweetleBeetle 5 TweetlePoodle 7 TweetleBeetle 9 Tweetle 11
 *        TweetleBeetlePoodle 13 Tweetle 15 TweetleBeetle 17 TweetlePoodle 19 TweetleBeetle 
 */
+
+public static void twisters(){
+        
+        
+       int counter=0;  // counter to make every line have only 11 number
+        for (int i = 1; i <= 110; i++) {
+            if(i%2==0){
+                System.out.print("Tweetle"); // "print" word so if the number exist in "multiple of 2" and "multiple of 4" and "multiple of 6" or two of them
+            if(i%4==0)
+                System.out.print("Beetle");
+            if(i%6==0)
+                System.out.print("Poodle");
+            }else{
+                System.out.print(" "+i+" ");
+            }
+           counter+=1;
+           if(counter%11==0)
+                System.out.print("\n"); // to make the next line 
+        }   
+    }
+
 
 /**
 * Write a method named "phoneKeypad" that takes a string parameter (str)
@@ -42,6 +63,67 @@ public class App{
 * Output: 2255464228626
 *
 */
+
+public static void phoneKeypad(String str){
+        
+    
+        for (int i = 0; i < str.length(); i++) {
+            
+            switch(Character.toUpperCase(str.charAt(i))){
+            case 'A':
+            case 'B':
+            case 'C': 
+                System.out.print("2");
+                break;
+            case 'D':
+            case 'E':
+            case 'F':
+                System.out.print("3");
+                break;
+            case 'G':
+            case 'H':
+            case 'I':
+                System.out.print("4");
+                break;
+            case 'J':
+            case 'K':
+            case 'L':
+                System.out.print("5");
+                break;
+            case 'M':
+            case 'N':
+            case 'O':
+                System.out.print("6");
+                break;
+            case 'P':
+            case 'Q':
+            case 'R':
+            case 'S':
+                System.out.print("7");
+                break;
+            case 'T':
+            case 'U':
+            case 'V':
+                System.out.print("8");
+                break;
+            case 'W':
+            case 'X':
+            case 'Y':
+            case 'Z':
+                System.out.print("9");    
+                break; 
+             
+            case ' ':
+            System.out.print("");
+                break;
+            default:
+                System.out.print(str.charAt(i));
+
+
+               
+        }
+        }
+    }
  
     public static void main(String [] args) {
         
@@ -49,8 +131,15 @@ public class App{
         /* Write your code here */
      
        //call method twisters()
+       twisters(); // calling twisters method
+
        //prompt user to enter a string 
+       Scanner key= new Scanner(System.in);
+        System.out.println("Pleas enter a word or a sentence");
+        String str= key.nextLine(); // "str " is the word/ sentence
+
        //call method phoneKeypad(string)
+       phoneKeypad(str); // callin phoneKeypad method
 
 
     }
